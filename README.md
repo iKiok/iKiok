@@ -38,17 +38,47 @@ it all started with Excel and PowerQuery&Pivot!
 <p><strong>the Stoics</strong></p>
 </blockquote>
 </div>
-<!--
-**iKiok/ikiok** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
-Here are some ideas to get you started:
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## 📂 Projects
+
+### Interactive Brokers Websocket Connection
+Engineered a production-grade real-time options data pipeline leveraging Python's asyncio and websockets for concurrent I/O operations, processing 50+ messages/sec from Interactive Brokers WebSocket API with intelligent contract filtering (3.5% ATM strike range, 3 nearest expirations). 
+
+Architected a multi-worker message processing system (4 parallel workers with asyncio.Queue) implementing priority-based message routing, LRU caching (@lru_cache with 10K entry capacity) for field parsing optimization, and connection pooling (aiohttp sessions) for API efficiency. 
+
+Data pipeline outputs structured time-series data to Polars DataFrames with explicit schema enforcement (17 typed columns: Greeks, IV, volume, OI, bid/ask), persisted incrementally to Parquet format (pyarrow) with 15-minute file rotation boundaries. 
+
+Implemented comprehensive data quality controls including regex-compiled field cleaners, NaN handling, and automated schema validation. Performance monitoring includes real-time metrics tracking (msg/sec throughput, queue saturation, cache hit rates >90%, dropped message counts) with 30-second interval logging for operational observability.
+
+
+### Automated Cryptocurrency Trading Bot for ByBit
+Engineered an automated cryptocurrency trading system on ByBit leveraging Python with Polars for high-performance data transformations and Hidden Markov Models (HMM) via hmmlearn for probabilistic regime detection. 
+
+Designed a multi-stage data pipeline integrating REST API data ingestion, real-time feature engineering (LDPM indicators, ATR, EMA), and Discord webhook-based approval workflows with asynchronous I/O. 
+
+Implemented enterprise-grade risk controls including position sizing algorithms, trailing stop management, and exchange state synchronization, while maintaining comprehensive logging and error handling for production resilience.
+
+  Ingestion Layer: ByBit REST API → JSON parsing → Schema validation
+  
+  Transformation Layer: Polars aggregations → Feature engineering → Statistical modeling
+  
+  Decision Layer: HMM inference → Signal scoring → Rule-based filtering
+  
+  Approval Layer: Discord webhook → Human confirmation → Event callback
+  
+  Execution Layer: Order placement → State sync → Position reconciliation
+  
+  Monitoring Layer: Logging, error handling, performance tracking
+
+### Real-time Options Greeks Monitoring Dashboard ~ Unusual Whales data
+
+• Real-Time Analytics Pipeline
+
+  Built automated ETL workflows processing parquet-based market data using Polars lazy evaluation, 
+  implementing complex window functions and aggregations to compute 30+ derived metrics for real-time trading analytics 
+
+• Production Streamlit Dashboard
+
+  Developed scalable BI application with modular data pipelines, auto-refresh capabilities, 
+  and interactive Plotly visualizations supporting multiple data sources and configurable lookback periods
