@@ -12,7 +12,7 @@ main hobby: options chains analysis and greeks exposure interpretation
 
 it all started with Excel and PowerQuery&Pivot!
 
-## 💻 Stamp Collection
+## 💻 Stamps Collection
 
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 ![Anaconda](https://img.shields.io/badge/Anaconda-%2344A833.svg?style=for-the-badge&logo=anaconda&logoColor=white)
