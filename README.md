@@ -51,7 +51,8 @@ Data pipeline outputs structured time-series data to Polars DataFrames with expl
 
 Implemented comprehensive data quality controls including regex-compiled field cleaners, NaN handling, and automated schema validation. Performance monitoring includes real-time metrics tracking (msg/sec throughput, queue saturation, cache hit rates >90%, dropped message counts) with 30-second interval logging for operational observability.
 
-<img width="796" height="473" alt="image" src="https://github.com/user-attachments/assets/8a74c092-2ea1-4d4d-be43-7728f32dd9f9" />
+<img width="847" height="436" alt="spy" src="https://github.com/user-attachments/assets/dfeb6f8c-a975-4781-9a47-800f0be3440e" />
+
 
 ### Automated Cryptocurrency Trading Bot for ByBit
 Engineered an automated cryptocurrency trading system on ByBit leveraging Python with Polars for high-performance data transformations and Hidden Markov Models (HMM) via hmmlearn for probabilistic regime detection. 
